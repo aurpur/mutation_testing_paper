@@ -1,0 +1,136 @@
+\documentclass[10pt, conference]{IEEEtran}
+\usepackage[english]{babel}
+\usepackage[usenames]{color}
+\usepackage{colortbl}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{epsfig}
+\usepackage{array, colortbl}
+\usepackage{listings}
+\usepackage{epstopdf}
+\usepackage{multirow}
+\usepackage{rotating}
+%\usepackage{subfigure}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[obeyspaces,hyphens,spaces]{url}
+\usepackage{balance}
+\usepackage{fancybox}
+\usepackage{scalefnt}
+\usepackage[normalem]{ulem}
+%\pagestyle{plain}
+\pagenumbering{arabic}
+\pagestyle{empty}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+
+
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+
+\makeatletter
+\renewcommand{\paragraph}[1]{\noindent\textsf{#1}.}
+\newcommand{\etal}{et~al.\xspace}
+\newcommand{\newtext}[1]{\textcolor{blue}{#1}}
+
+% Reviewing commands
+\newcommand{\Aurel}[1]{\textcolor{brown}{{\it [Aurel: #1]}}}
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO: #1}}}
+
+
+\newcommand{\add}[1]{\textcolor{red}{{\it $<$#1$>$}}}
+\newcommand*{\RQOne}{ Is it possible to detect design smells in CNN deep learning programs based on modeling?}
+\newcommand*{\RQTwo}{ What are the most prevalent design smells in CNN deep learning programs?}
+\newcommand*{\RQThree}{ Are there any correlation between the program design smells?}
+
+
+
+\title{Effective mutation test generation for End-to-End test programs using large language models}
+% \author{Aurel Ikama$^{1}$, Foutse Khomh$^{1}$, Heng Li$^{1}$
+%     \\
+% \emph{$^{1}$ Dep. of Computer and Software Engineering, Polytechnique Montréal,
+% Montréal}}
+    
+
+\author{Anonymous Author(s)}
+
+
+\begin{document}
+\maketitle
+
+\input{section/abstract}
+
+
+
+% Introduction
+\section{Introduction}
+\input{section/introduction}
+
+% Background
+\section{Background}
+\input{section/background}
+
+
+% Study Design
+\section{Methodology}
+\input{section/methodology}
+
+% Data
+\section{data}
+\input{section/data}
+
+% Evaluation
+\section{evaluation}
+\input{section/evaluation}
+
+% Conclusion
+\section{Conclusion}
+\input{section/conclusion}
+
+\balance
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography/citations}
+\end{document}
+
