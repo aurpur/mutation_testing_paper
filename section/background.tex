@@ -1,0 +1,41 @@
+\label{sec:background}
+
+\subsection{Mutant Generation}
+A \textbf{mutant} is a small change in the source code of a PUT. The change is made to simulate a
+real-life defect in the code \cite{offutt2001mutation, jia2010analysis}. The aim of mutation testing is to verify that a given test is capable of detecting the mutant by failing. This is known as killing the mutant. Mutants can be divided into two broad categories:
+
+\begin{itemize}
+    \item \textbf{Equivalent Mutants:} Mutants that do not affect the behavior of
+          the PUT. These mutants are not useful for testing.
+    \item \textbf{Non-Equivalent Mutants:} Mutants that affect the behavior of the PUT. These mutants are useful for testing.
+\end{itemize}
+
+La génération de mutants est une étape cruciale dans le processus de test de
+mutation. Il est important de noté que la génération des mutants
+peut être manuelle ou automatique. Les approches manuelles nécessitent évidement
+une intervention humaine. Alors que les approches automatiques utilisent des
+outils tels que PIT \cite{leotta2024mutta, coles2016pit}, Major \cite{just2014major},
+Jumble \cite{irvine2007jumble}, et Javalanche \cite{schuler2009javalanche}.
+En revanche, ses outils peuvent générer des mutants équivalents, ce qui peut entraîner
+des résultats incorrects lors de l'évaluation des tests de mutation et donc une
+efficacité basse. Dans un recent travail Leotta \etal \cite{leotta2024mutta} a
+utilisé PIT pour générer des mutants car l'outils met à disposition un nombre
+élevé des mutateurs nécessaire aux tests de mutation E2E.
+
+
+\subsection{ML in Mutation Testing}
+
+\subsection{LLM in Mutation Testing}
+
+
+
+
+
+
+
+
+
+
+
+
+
