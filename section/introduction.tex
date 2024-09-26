@@ -1,45 +1,47 @@
 \label{sec:introduction}
 
-La qualité des applications web est une préoccupation majeure dans cycle de
-vie d'un logiciel. Elle est souvent coûteuse et difficile à garantir. Elle
-est par ailleurs cruciale pour les industries sensible comme la santé ou la
-banque. Pour tester un logiciel on utilise entre des tests End-to-End (E2E). Ces tests sont généralement réalisés en utilisant des
-frameworks tels que Selenium ou Cypress \cite{cerioli20205}. Les tests End-to-End (E2E) sont une approche de test qui vise à tester
-le comportement d'une application web dans son ensemble selon la perspective de
-l'utilisateur final. De ce fait, le programme sous test (PUT) est une boite
-noire du point de vue du test. Cette caractéristique rends entre autres difficile
-l'évaluation de la qualité des tests E2E tant pendant la création que la
-maintenance du test. Ricca \etal \cite{ricca2019three} ont identifié plusieurs
-défis liés à la qualité des tests E2E parmis lesquels on retrouve le problème de
-la fragilité. Pour évaluer la fragilité des tests en général on utilise les tests de mutation \cite{hamimoune2016mutation}. Les tests de mutation est une
-technique de test qui consiste à introduire des défauts dans le code source du
-PUT pour évaluer la qualité des tests \cite{woodward1993mutation}. Cette méthode est utilisé dans
-l'industrie pour les tests unitaires du fait de leur caractéristique de test en
-boite blanche. Cependant quelques travaux commencent à s'intéresser à
-l'application des tests de mutation pour les tests E2E. Yandrapally \etal
-\cite{yandrapally2021mutation} propose dans le framework MaewU qui évalue des
-suites de tests d'interface utilisateur (UI). Il introduit 16 opérations de mutation basées
-sur 250 bug reports. Leotta \etal \cite{leotta2024mutta} propose par la suite l'outil
-MUTTA qui permet d'automatiser le processus de test de mutation des tests E2E.
-Ces travaux ont montré que les tests de mutation sont certes l'approche la plus
-pertinante pour évaluer la qualité des tests E2E, mais il subsiste plusieurs défis
-à relever. Parmi ces défis on retourve : (i) le coût élevé des tests de
-mutation, (ii) l'identification et le filtre des mutants équivalents, et (iii)
-l'éfficacité des tests de mutation. Dans ce travail, nous appliquons la génération des tests de mutation pour répondre à la problèmatique suivante : \textit{Comment optimiser la génération des tests de mutation pour les tests End-to-End (E2E) en surmontant les défis du coût élevé, de l’identification des mutants équivalents, et en maximisant l’efficacité des tests pour une évaluation fiable de la qualité des suites de tests ?}
+The quality of web applications is a major concern in the software software life
+cycle. It is often costly and difficult to guarantee. It crucial for sensitive
+industries such as healthcare and banking. banking. To test a web application,
+we use several types of tests, which can be grouped into three levels of a
+pyramid. From the bottom of the pyramid pyramid, unit tests, service tests and
+End-to-End (E2E) tests. E2E tests are generally produced using frameworks such as Selenium or Cypress.
+\cite{cerioli20205}. End-to-End testing is a testing approach that aims to
+test the behavior of a web application as a whole from the end-user's
+perspective. As a result, the program under test (PUT) is a black box from the
+testing point of view. Among other things, this characteristic makes it
+difficult to assess the quality of E2E tests during both test creation and
+maintenance. Ricca \etal \cite{ricca2019three} have identified several challenges to
+the quality of E2E tests, including the problem of fragility. In general,
+mutation tests are used to assess test fragility \cite{hamimoune2016mutation}. Mutation testing is a testing technique that consists of introducing defects
+into the LUP source code and then evaluating the ability of the tests to capture
+these mutations \cite{woodward1993mutation}. This method is used in industry for unit testing, due to its white-box testing
+characteristic. However, a number of studies are beginning to focus on the
+application of mutation testing to E2E testing. Yandrapally \etal \cite{yandrapally2021mutation} proposes the MaewU framework, which evaluates
+user interface (UI) test suites. It introduces 16 mutation operations based on
+250 bug reports.
 
-Nous proposons une approche basée sur les modèles
-de langage pour générer des tests de mutation plus réalistes, nécessaire et
-diversifiés. Notre étude est conçue pour répondre aux questions de
-recherche suivantes:
+
+Leotta \etal \cite{leotta2024mutta} subsequently proposed the MUTTA tool, which automates the mutation testing process for E2E tests. This work has shown that mutation testing is indeed the most relevant approach for assessing the quality of E2E tests, but several challenges remain. These include: (i) the high cost (execution time and number of mutants) of mutation tests, (ii) the identification and filtering of equivalent mutants, and (iii) the efficiency of mutation tests. In this work, we apply mutation test generation to address the following problem:
+\textit{How do you generate efficient mutation tests for end-to-end testing by meeting the challenges of cost, identification and reduction of equivalent mutants?}
+
+We propose an approach based on language models and PUT bug logs to generate closer-to-existing, necessary and diversified mutation tests. Our study is designed to answer the following research questions:
 
 \begin{itemize}
-    \item \textbf{RQ1:} LLM peut-il générer des tests de mutation plus efficaces que l'approche de pointe, en s'appuyant sur l'historique des erreurs
 
-    \item \textbf{RQ2:} Quel est le modele de langage le plus adapté pour la génération des tests de mutation?
 
-    \item \textbf{RQ3:} Peut-on identifier et réduire le nombre de mutants équivalents générés par notre approche?
+\item \textbf{RQ1:} What is the most adapted model for generating mutation tests? \Aurel{mutants introduits / mutants générés ?}
 
-    \item \textbf{RQ4:} Le coût (temps d'exécution et nombre de mutants) des tests de mutation générés par notre approche est-il réduit par rapport à l'approche de l'état de l'art?
+\item \textbf{RQ2:} Can LLM be used to identify equivalent mutants? If so, which model is best adapted to this task? \Aurel{mutants équivalents / mutants générés ?}
+
+    \item \textbf{RQ3:} Is the cost (execution time and number of mutants) of the mutation tests generated by our approach reduced compared with the state-of-the-art approach?
+    
+\item \textbf{RQ4:} Can LLM generate more efficient mutation tests than the
+state-of-the-art approach? \Aurel{voir le rapport entre la répartition des
+mutants
+équivalents par rapport au nombre de mutants générés dans les 2 approches.
+Efficacité = mutants tués / mutants générés, temps d'exécution, nombre de
+mutants équivalents / mutants générés.}
 
 \end{itemize}
 
